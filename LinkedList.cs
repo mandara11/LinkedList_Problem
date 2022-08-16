@@ -27,32 +27,29 @@ namespace LinkedListProblem
             }
             Console.WriteLine("{0} Inserted into Linked List", node.data);
         }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            Node temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = node;
+            Console.WriteLine(node.data + " Append data");
+        }
         public void Display()
         {
             Node temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("LinkList Is Empty");
-                return;
+                
             }
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
-            }
-        }
-        public void AddInReverseOrder(int data)
-        {
-            Node newNode = new Node(data); 
-            if (head == null)
-            {
-                head = newNode; 
-            }
-            else
-            {
-                Node temp = head;
-                head = newNode;
-                head.next = temp;
             }
         }
     }
