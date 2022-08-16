@@ -89,6 +89,25 @@ namespace LinkedListProblem
             Node temp = this.head;
             this.head = this.head.next;
         }
+        public Node RemoveLastNode()
+        {
+            if (head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            Console.WriteLine("Last Node Is Deleted SuccesFully ");
+            return head;
+        }
         public void Display()
         {
             Node temp = this.head;
