@@ -41,5 +41,19 @@ namespace LinkedListProblem
                 temp = temp.next;
             }
         }
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data); // (56,null)
+            if (head == null)
+            {
+                head = newNode; // (70,null)
+            }
+            else
+            {
+                Node temp = head;// (30,next)->(70,null)
+                head = newNode;//(56,null)
+                head.next = temp;//(56,next)->(30,next)->(70,null)
+            }
+        }
     }
 }
