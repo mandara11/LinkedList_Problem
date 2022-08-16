@@ -32,10 +32,18 @@
             //list.Display();
 
             //UC7
+            //list.Add(56);
+            //list.Add(30);
+            //list.Add(70);
+            //list.Search(30);
+
+            //UC8
             list.Add(56);
             list.Add(30);
             list.Add(70);
-            list.Search(30);
+            int newNode = list.Search(30);
+            list.InsertAtParticularPosition(newNode + 1, 40);
+            list.Display();
         }
     }
 }
