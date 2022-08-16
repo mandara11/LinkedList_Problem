@@ -12,11 +12,16 @@
             //list.Display();
 
             //UC4
+            //list.Add(56);
+            //list.Add(70);
+            //int a = list.Search(56);
+            //list.InsertData(a + 1, 30);
+            //list.Display();
+
+            //UC5
             list.Add(56);
             list.Add(70);
-            int a = list.Search(56);
-            list.InsertData(a + 1, 30);
-
+            list.DeleteFirstNode();
             list.Display();
         }
     }
