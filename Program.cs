@@ -46,15 +46,27 @@
             //list.Display();
 
             //UC9
-            list.Add(56);
-            list.Add(30);
-            list.Add(70);
-            int node = list.Search(30);
-            list.InsertAtParticularPosition(node + 1, 40);
-            list.Display();
-            Console.WriteLine("\n\nElement Delete SuccessFully");
-            list.DeleteNodeAtParticularPosition(node + 1);
-            list.Display();
+            //list.Add(56);
+            //list.Add(30);
+            //list.Add(70);
+            //int node = list.Search(30);
+            //list.InsertAtParticularPosition(node + 1, 40);
+            //list.Display();
+            //Console.WriteLine("\n\nElement Delete SuccessFully");
+            //list.DeleteNodeAtParticularPosition(node + 1);
+            //list.Display();
+
+            //UC10
+            SortingList<int> sortingList = new SortingList<int>();
+            sortingList.AddNode(56);
+            sortingList.AddNode(30);
+            sortingList.AddNode(40);
+            sortingList.AddNode(70);
+            Console.WriteLine("Original List: ");
+            sortingList.DisplaySort();
+            sortingList.SortOrderedList();
+            Console.WriteLine("Final Sorted List: ");
+            sortingList.DisplaySort();
         }
     }
 }
