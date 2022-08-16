@@ -8,7 +8,7 @@ namespace LinkedListProblem
 {
     public class LinkedList
     {
-        internal Node head;
+        public Node head;
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -25,27 +25,44 @@ namespace LinkedListProblem
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} Inserted into Linked List", node.data);
+            Console.WriteLine("{0} Inserted into Linked List\n", node.data);
         }
-        public void Append(int data)
+        public void Display()
         {
-            Node node = new Node(data);
-            Node temp = head;
-            while (temp.next != null)
+            Node temp = this.head;
+            if (temp == null)
             {
+                Console.WriteLine("LinkList Is Empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
                 temp = temp.next;
             }
-            temp.next = node;
-            Console.WriteLine(node.data + " Append data");
         }
-
-        public int Search(int addedData)
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data); // (56,null)
+            if (head == null)
+            {
+                head = newNode; // (70,null)
+            }
+            else
+            {
+                Node temp = head;// (30,next)->(70,null)
+                head = newNode;//(56,null)
+                head.next = temp;//(56,next)->(30,next)->(70,null)
+            }
+        }
+        public int Search(int value)
         {
             Node node = this.head;
             int count = 0;
             while (node != null)
             {
-                if (node.data == addedData)
+
+                if (node.data == value)
                 {
                     return count;
                 }
@@ -53,19 +70,21 @@ namespace LinkedListProblem
                 count++;
             }
             return count;
+            Console.WriteLine("Search Value Is: " + value);
         }
-        public Node InsertData(int position, int data)
+
+        public Node InsertAtParticularPosition(int position, int data)
         {
-            Node node2 = new Node(data);
+            Node newestNode = new Node(data);
             if (this.head == null)
             {
-                return node2;
+                return newestNode;
             }
             if (position == 0)
             {
-                node2.next = head;
-                head = node2;
-                return head;
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
             }
             Node prev = null;
             Node current = this.head;
@@ -76,18 +95,20 @@ namespace LinkedListProblem
                 current = current.next;
                 count++;
             }
-            node2.next = prev.next;
-            prev.next = node2;
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            Console.WriteLine("Data Inserted");
             return this.head;
         }
-        public void DeleteFirstNode()
+        public Node RemoveFirstNode()
         {
             if (this.head == null)
             {
-                Console.WriteLine("Link list is empty");
+                return null;
             }
-            Node temp = this.head;
             this.head = this.head.next;
+            Console.WriteLine("First Node Is Deleted SuccesFully ");
+            return this.head;
         }
         public Node RemoveLastNode()
         {
@@ -107,20 +128,6 @@ namespace LinkedListProblem
             NewNode.next = null;
             Console.WriteLine("Last Node Is Deleted SuccesFully ");
             return head;
-        }
-        public void Display()
-        {
-            Node temp = this.head;
-            if (temp == null)
-            {
-                Console.WriteLine("LinkList Is Empty");
-                
-            }
-            while (temp != null)
-            {
-                Console.Write(temp.data + " ");
-                temp = temp.next;
-            }
         }
     }
 }
