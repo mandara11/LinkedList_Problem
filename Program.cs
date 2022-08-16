@@ -5,6 +5,7 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to LinkedList Program");
+
             LinkedList list = new LinkedList();
             list.Add(56);
             list.Add(30);
