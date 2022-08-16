@@ -43,16 +43,16 @@ namespace LinkedListProblem
         }
         public void AddInReverseOrder(int data)
         {
-            Node newNode = new Node(data); // (56,null)
+            Node newNode = new Node(data); 
             if (head == null)
             {
-                head = newNode; // (70,null)
+                head = newNode; 
             }
             else
             {
-                Node temp = head;// (30,next)->(70,null)
-                head = newNode;//(56,null)
-                head.next = temp;//(56,next)->(30,next)->(70,null)
+                Node temp = head;
+                head = newNode;
+                head.next = temp;
             }
         }
         public int Search(int value)
